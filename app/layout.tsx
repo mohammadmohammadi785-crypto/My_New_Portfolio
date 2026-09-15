@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Providers from "./providers/ThemeProvider";
+// import Providers from "./providers/ThemeProvider";
 
 import "@/fontawesome-free-5.15.4-web/css/all.min.css";
 
@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Providers>{children}</Providers>
+        <div>{children}</div>
       </body>
     </html>
   );

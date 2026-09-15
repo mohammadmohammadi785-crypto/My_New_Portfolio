@@ -17,7 +17,7 @@ export default function Main() {
       <Home />
       <About />
       <Projects />
-      <Contact />
+      {/* <Contact /> */}
     </motion.main>
   );
 }
