@@ -2,6 +2,7 @@
 
 import { useContext, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import github from "@/public/icons/github.svg";
 import { Sun, Moon, Menu, X, Send, Mail } from "lucide-react";
 import { ThemeContext } from "../context/ThemeContext";
 
@@ -26,106 +27,90 @@ export default function Header() {
       className="bg-black border-b-normal border-b text-white py-3 sm:py-4 sticky top-0 z-50 shadow-lg"
     >
       {/* ... همان کد قبلی ... */}
-      <h2 className="text-2xl sm:text-3xl text-normal md:text-4xl font-bold mb-6 flex items-center">
-        Contact
-      </h2>
-      <div className="grid grid-cols-1  lg:grid-cols-2 gap-6 sm:gap-8">
-        <div>
-          <p className="flex items-center text-normal text-sm sm:text-base">
-            <Mail className="mr-2 h-5 w-5" /> Email:
-            mohammadmohammadi2025@gmail.com
-          </p>
-          <p className="text-sm text-normal sm:text-base md:text-lg flex items-center">
-            <Linkedin className="mr-2 h-5 w-5" />
-            <a
-              href="https://www.linkedin.com/in/mohammad-mohammadi-372a45394/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:underline"
-            >
-              https://www.linkedin.com/in/mohammad-mohammadi-372a45394/
-            </a>
-          </p>
-          <p className="text-sm sm:text-base text-normal md:text-lg flex items-center ">
-            <Github className="mr-2 h-5 w-5 " />
-            <a
-              href="https://github.com/mohammadmohammadi785-crypto"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:underline"
-            >
-              github.com/mohammadmohammadi785-crypto
-            </a>
-          </p>
-        </div>
-        <motion.form
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-          onSubmit={handleSubmit}
-          className="space-y-4 border p-4 rounded-md"
-        >
-          <div>
-            <label
-              htmlFor="name"
-              className="block text-sm font-medium text-normal"
-            >
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="mt-1 w-full p-2 border rounded-lg focus:outline-0 focus:border-normal"
-              required
-            />
-          </div>
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-normal"
-            >
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="mt-1 w-full p-2 border rounded-lg focus:outline-0 focus:border-normal"
-              required
-            />
-          </div>
-          <div>
-            <label
-              htmlFor="message"
-              className="block text-sm font-medium text-normal"
-            >
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              className="mt-1 w-full p-2 border rounded-lg focus:outline-0 focus:border-normal"
-              rows={4}
-              required
-            ></textarea>
-          </div>
+      <div className="container mx-auto px-4 flex justify-between items-center">
+        <h1 className="text-xl brush gradient-bg text-normal sm:text-2xl md:text-3xl font-extrabold tracking-tight">
+          Mohammad Mohammadi
+        </h1>
+        <div className="hidden sm:flex items-center space-x-6">
+          <nav>
+            <ul className="flex space-x-6 md:space-x-8">
+              {navItems.map((item) => (
+                <li key={item.href}>
+                  <a
+                    href={item.href}
+                    className="flex text-normal items-center transition-colors"
+                  >
+                    <span className="hidden md:inline ml-1">{item.label}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
           <motion.button
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            type="submit"
-            className="bg-normal text-white px-6 py-3 rounded-full flex items-center  transition-colors duration-300"
+            onClick={toggleTheme}
+            className="p-2 text-normal rounded-full"
           >
-            <Send className="mr-2 h-5 w-5" /> Send Message
+            {theme === "light" ? (
+              <Moon className="h-5 w-5" />
+            ) : (
+              <Sun className="h-5 w-5" />
+            )}
           </motion.button>
-        </motion.form>
+        </div>
+        <div className="flex items-center space-x-3 sm:hidden">
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={toggleTheme}
+            className="p-2 rounded-full bg-black"
+          >
+            {theme === "light" ? (
+              <Moon className="h-5 w-5" />
+            ) : (
+              <Sun className="h-5 w-5" />
+            )}
+          </motion.button>
+          <button onClick={toggleMenu} className="p-2">
+            {isMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </button>
+        </div>
       </div>
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.nav
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ type: "spring", stiffness: 100, damping: 20 }}
+            className="sm:hidden fixed top-0 right-0 h-full w-64 bg-black z-40 shadow-2xl"
+          >
+            <div className="flex justify-end p-4">
+              <button onClick={toggleMenu}>
+                <X className="h-7 w-7" />
+              </button>
+            </div>
+            <ul className="flex flex-col space-y-6 px-6 pt-4">
+              {navItems.map((item) => (
+                <li key={item.href}>
+                  <a
+                    href={item.href}
+                    onClick={toggleMenu}
+                    className="flex items-center text-lg text-normal transition-colors"
+                  >
+                    <span className="ml-3">{item.label}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 }

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Providers from "./providers/ThemeProvider";
 
+import "@/fontawesome-free-5.15.4-web/css/all.min.css";
+
 export const metadata: Metadata = {
   title: "Mohammad Mohammadi | Portfolio",
   description: "Web Developer Portfolio",
