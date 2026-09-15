@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Twitter, Mail, Phone } from "lucide-react";
+import { X, Mail, Phone } from "lucide-react";
 
 export default function Footer() {
   const navLinks = [
@@ -15,17 +15,17 @@ export default function Footer() {
     {
       name: "GitHub",
       href: "https://github.com/mohammadmohammadi785-crypto",
-      icon: <Github className="h-5 w-5 sm:h-6 sm:w-6" />,
+      icon: <i className="h-5 fab fa-github w-5 sm:h-6 sm:w-6"></i>,
     },
     {
       name: "LinkedIn",
       href: "https://www.linkedin.com/in/mohammad-mohammadi-372a45394/",
-      icon: <Linkedin className="h-5 w-5 sm:h-6 sm:w-6" />,
+      icon: <i className="h-5 fab fa-linkedin w-5 sm:h-6 sm:w-6"></i>,
     },
     {
       name: "Twitter",
       href: "https://x.com/M0HAMMADI1212",
-      icon: <Twitter className="h-5 w-5 sm:h-6 sm:w-6" />,
+      icon: <i className="h-5 fab fa-twitter w-5 sm:h-6 sm:w-6"></i>,
     },
   ];
 
