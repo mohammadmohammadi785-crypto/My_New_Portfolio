@@ -1,10 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Home from "./Home";
 import About from "./About";
 import Projects from "./Projects";
 import Contact from "./Contact";
-import Home from "./Home";
 
 export default function Main() {
   return (
