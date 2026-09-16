@@ -1,16 +1,12 @@
 "use client";
 
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import github from "@/public/icons/github.svg";
-import { Sun, Moon, Menu, X, Send, Mail } from "lucide-react";
+import { Sun, Moon, Menu, X } from "lucide-react";
 import { useTheme } from "next-themes";
-import React from "react";
-import { useTranslation } from "react-i18next";
-const { t, i18n } = useTranslation();
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const { theme, setTheme } = useTheme();
   const navItems = [
     { href: "#home", label: "Home" },
     { href: "#about", label: "About" },
@@ -27,7 +23,6 @@ export default function Header() {
       transition={{ type: "spring", stiffness: 120, damping: 20 }}
       className="bg-black border-b-normal border-b text-white py-3 sm:py-4 sticky top-0 z-50 shadow-lg"
     >
-      {/* ... همان کد قبلی ... */}
       <div className="container mx-auto px-4 flex justify-between items-center">
         <h1 className="text-xl brush gradient-bg text-normal sm:text-2xl md:text-3xl font-extrabold tracking-tight">
           Mohammad Mohammadi
@@ -50,14 +45,10 @@ export default function Header() {
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            onClick={toggleTheme}
+            onClick={() => setTheme("light")}
             className="p-2 text-normal rounded-full"
           >
-            {theme === "light" ? (
-              <Moon className="h-5 w-5" />
-            ) : (
-              <Sun className="h-5 w-5" />
-            )}
+            Light
           </motion.button>
         </div>
         <div className="flex items-center space-x-3 sm:hidden">
@@ -65,12 +56,9 @@ export default function Header() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             className="p-2 rounded-full bg-black"
+            onClick={() => setTheme("dark")}
           >
-            {theme === "light" ? (
-              <Moon className="h-5 w-5" />
-            ) : (
-              <Sun className="h-5 w-5" />
-            )}
+            Dark
           </motion.button>
           <button onClick={toggleMenu} className="p-2">
             {isMenuOpen ? (
