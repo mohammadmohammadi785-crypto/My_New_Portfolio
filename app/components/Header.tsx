@@ -4,10 +4,11 @@ import { useContext, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import github from "@/public/icons/github.svg";
 import { Sun, Moon, Menu, X, Send, Mail } from "lucide-react";
-import { ThemeContext } from "../context/ThemeContext";
-
+import { useTheme } from "next-themes";
+import React from "react";
+import { useTranslation } from "react-i18next";
+const { t, i18n } = useTranslation();
 export default function Header() {
-  const { theme, toggleTheme } = useContext(ThemeContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
@@ -63,7 +64,6 @@ export default function Header() {
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            onClick={toggleTheme}
             className="p-2 rounded-full bg-black"
           >
             {theme === "light" ? (
