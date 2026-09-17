@@ -75,8 +75,8 @@ export default function Footer() {
                   key={index}
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1 }}
-                  className="text-normal flex items-center gap-2 my-2"
+                  whileHover={{ scale: 1.2 }}
+                  className="text-normal w-fit flex items-center gap-2 my-2"
                 >
                   {icon}
                   {name}

@@ -37,7 +37,7 @@ export default function Projects() {
           <motion.div
             key={index}
             whileHover={{ scale: 1.03 }}
-            className="border border-normal text-normal overflow-hidden shadow-md bg-gray-50 dark:bg-black rounded"
+            className="border overflow-hidden text-normal shadow-md bg-gray-50 dark:bg-black"
           >
             <img
               src={project.image}

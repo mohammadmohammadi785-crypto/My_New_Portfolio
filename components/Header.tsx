@@ -51,7 +51,7 @@ export default function Header() {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <h1 className="text-xl dancing-script gradient-bg sm:text-2xl md:text-3xl font-extrabold tracking-tight">
-          Mohammad Mohammadi
+          {t("title")}
         </h1>
 
         <div className="hidden sm:flex items-center gap-4">

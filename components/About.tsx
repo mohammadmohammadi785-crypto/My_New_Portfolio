@@ -117,7 +117,7 @@ export default function About() {
                 <motion.div
                   key={index}
                   whileHover={{ scale: 1.05 }}
-                  className="flex items-center text-black dark:text-normal p-3 bg-gray-100 dark:bg-[#4e4848] text-sm sm:text-base rounded"
+                  className="flex items-center text-black dark:text-black p-3 bg-gray-100 dark:bg-[#4e4848] text-sm sm:text-base rounded"
                 >
                   {icon === "github" ? (
                     <img src={Github} className="h-6 w-6" />
