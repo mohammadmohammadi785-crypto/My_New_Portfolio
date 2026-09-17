@@ -5,9 +5,11 @@ import { ThemeProvider } from "next-themes";
 export default function Page() {
   return (
     <div className="min-h-screen">
-      <Header />
-      <Main />
-      <Footer />
+      <ThemeProvider enableSystem attribute="class">
+        <Header />
+        <Main />
+        <Footer />
+      </ThemeProvider>
     </div>
   );
 }
