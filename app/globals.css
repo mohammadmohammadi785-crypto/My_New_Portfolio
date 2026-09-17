@@ -1,18 +1,74 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
-html { scroll-behavior: smooth; }
-body { margin: 0; transition: background-color .3s ease, color .3s ease; }
+@theme {
+  --font-inter: "Inter", "sans-serif";
+  --font-brush: "Alex Brush", "cursive";
+  --color-brand: #ee0979;
+  --color-normal: #b59e7f;
+}
+.dancing-script {
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
 
-.text-normal { color: #16a34a; }
-.bg-normal { background-color: #16a34a; }
-.border-normal { border-color: #16a34a; }
-.gradient-bg { background: linear-gradient(90deg, #16a34a, #22c55e); -webkit-background-clip: text; background-clip: text; color: transparent; }
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+.dark {
+  /* پس‌زمینه اصلی برای دارک مود */
+  --bg-color: #1f2937;
+  --text-color: #e5e7eb;
+  --card-bg: black;
+  --card-border: #b59e7f;
+  --button-bg: #3b82f6;
+  --button-hover: #2563eb;
+}
 
-html[dir='rtl'] body { direction: rtl; }
-html[dir='rtl'] .ml-2 { margin-left: 0; margin-right: .5rem; }
-html[dir='rtl'] .ml-3 { margin-left: 0; margin-right: .75rem; }
-html[dir='rtl'] .mr-2 { margin-right: 0; margin-left: .5rem; }
-html[dir='rtl'] .mr-3 { margin-right: 0; margin-left: .75rem; }
+.text-normal {
+  color: #b59e7f;
+}
 
-input, textarea { color: inherit; background-color: transparent; }
+.border-normal {
+  border-color: #b59e7f;
+}
+.gradient-bg {
+  background: linear-gradient(90deg, #b59e7f, #b59e7f);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+html[dir="rtl"] body {
+  direction: rtl;
+}
+html[dir="rtl"] .ml-2 {
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+html[dir="rtl"] .ml-3 {
+  margin-left: 0;
+  margin-right: 0.75rem;
+}
+html[dir="rtl"] .mr-2 {
+  margin-right: 0;
+  margin-left: 0.5rem;
+}
+html[dir="rtl"] .mr-3 {
+  margin-right: 0;
+  margin-left: 0.75rem;
+}
+
+input,
+textarea {
+  color: inherit;
+  background-color: transparent;
+}

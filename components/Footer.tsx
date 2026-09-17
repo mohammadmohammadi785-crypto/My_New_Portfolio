@@ -2,11 +2,15 @@
 
 import { motion } from "framer-motion";
 import { Mail, Phone } from "lucide-react";
+import { Github, Linkedin, Twitter } from "lucide-react";
+const socialLinks1 = [
+  ["GitHub", <Github className="h-5 w-5 sm:h-6 sm:w-6" />],
+  ["LinkedIn", <Linkedin className="h-5 w-5 sm:h-6 sm:w-6" />],
+  ["twitter", <Twitter className="h-5 w-5 sm:h-6 sm:w-6" />],
+];
 import { useTranslation } from "react-i18next";
 import "@/i18n/config";
-import Github from "@/public/icons/github.svg";
-import Linkedin from "@/public/icons/linkedin.svg";
-import Twitter from "@/public/icons/twitter.svg";
+import { link } from "fs/promises";
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -20,17 +24,17 @@ export default function Footer() {
     {
       name: "GitHub",
       href: "https://github.com/mohammadmohammadi785-crypto",
-      icon: <Github className="h-5 w-5" />,
+      icon: <Github className="h-5 w-5 sm:h-6 sm:w-6" />,
     },
     {
       name: "LinkedIn",
       href: "https://www.linkedin.com/in/mohammad-mohammadi-372a45394/",
-      icon: <Linkedin className="h-5 w-5" />,
+      icon: <Linkedin className="h-5 w-5 sm:h-6 sm:w-6" />,
     },
     {
       name: "Twitter",
       href: "https://x.com/M0HAMMADI1212",
-      icon: <Twitter className="h-5 w-5" />,
+      icon: <Twitter className="h-5 w-5 sm:h-6 sm:w-6" />,
     },
   ];
 
@@ -66,17 +70,16 @@ export default function Footer() {
               {t("footer.follow")}
             </h3>
             <div className="flex flex-col">
-              {socialLinks.map((link) => (
+              {socialLinks.map(({ name, icon }, index) => (
                 <motion.a
-                  key={link.name}
-                  href={link.href}
+                  key={index}
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1 }}
                   className="text-normal flex items-center gap-2 my-2"
                 >
-                  {link.icon}
-                  {link.name}
+                  {icon}
+                  {name}
                 </motion.a>
               ))}
             </div>

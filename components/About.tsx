@@ -2,9 +2,60 @@
 
 import { motion } from "framer-motion";
 import Github from "@/public/icons/github.svg";
+import nextdotjs from "@/public/nextdotjs.svg";
+import tailwindcss from "@/public/tailwindcss.svg";
+import javascript from "@/public/javascript.svg";
+import html5 from "@/public/html5.svg";
+import react1 from "@/public/react1.svg";
+import css from "@/public/css.svg";
+import laravel from "@/public/laravel.svg";
+import typescript from "@/public/typescript.svg";
+import redux1 from "@/public/react1.svg";
 import { useTranslation } from "react-i18next";
 import "@/i18n/config";
 
+// const skills = [
+//   {
+//     name: "React",
+//     icon: <img src={react1} className="h-5 w-5 text-black" />,
+//   },
+//   {
+//     name: "Type Script",
+//     icon: <img src={typescript} className="h-5 w-5 text-black" />,
+//   },
+//   {
+//     name: "JavaScript",
+//     icon: <img src={javascript} className="h-5 w-5 text-black" />,
+//   },
+//   {
+//     name: "HTML5",
+//     icon: <img src={html5} className="h-5 w-5 text-black" />,
+//   },
+//   {
+//     name: "CSS",
+//     icon: <img src={css} className="h-5 w-5 text-black" />,
+//   },
+//   {
+//     name: "Tailwind CSS",
+//     icon: <img src={tailwindcss} className="h-5 w-5 text-black" />,
+//   },
+//   {
+//     name: "Next.js",
+//     icon: <img src={nextdotjs} className="h-5 w-5 text-black" />,
+//   },
+//   {
+//     name: "GitHub",
+//     icon: <img src={Github} className="h-5 w-5 text-black" />,
+//   },
+//   {
+//     name: "Laravel",
+//     icon: <img src={laravel} className="h-5 w-5 text-black" />,
+//   },
+//   {
+//     name: "Redux",
+//     icon: <img src={redux1} className="h-5 w-5 text-black" />,
+//   },
+// ];
 const skills = [
   ["React", "/react1.svg"],
   ["Type Script", "/typescript.svg"],
@@ -13,7 +64,7 @@ const skills = [
   ["CSS", "/css.svg"],
   ["Tailwind CSS", "/tailwindcss.svg"],
   ["NextJs", "/nextdotjs.svg"],
-  ["GitHub", "github"],
+  ["GitHub", "/icons/github.svg"],
   ["Laravel", "/laravel.svg"],
   ["Redux", "/redux1.svg"],
 ];
@@ -26,7 +77,7 @@ export default function About() {
       initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="bg-white dark:bg-gray-900 border-b p-6 sm:p-8 md:p-10 rounded-lg shadow-lg"
+      className="bg-white text-normal dark:bg-black border-b p-6 sm:p-8 md:p-10 rounded-lg shadow-lg"
     >
       <h2 className="text-2xl text-normal sm:text-3xl md:text-4xl font-bold mb-6">
         {t("about.title")}
@@ -66,10 +117,10 @@ export default function About() {
                 <motion.div
                   key={index}
                   whileHover={{ scale: 1.05 }}
-                  className="flex items-center text-black dark:text-white p-3 bg-gray-100 dark:bg-gray-800 text-sm sm:text-base rounded"
+                  className="flex items-center text-black dark:text-normal p-3 bg-gray-100 dark:bg-[#4e4848] text-sm sm:text-base rounded"
                 >
                   {icon === "github" ? (
-                    <Github className="h-6 w-6" />
+                    <img src={Github} className="h-6 w-6" />
                   ) : (
                     <img src={icon} alt={name} className="w-6 h-6" />
                   )}

@@ -1,9 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Send } from "lucide-react";
-import Github from "@/public/icons/github.svg";
-import Linkedin from "@/public/icons/linkedin.svg";
+import { Mail, Github, Linkedin, Send } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -55,7 +53,7 @@ export default function Contact() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       id="contact"
-      className="bg-white dark:bg-gray-900 p-6 border-b sm:p-8 md:p-10 rounded-lg shadow-lg"
+      className="bg-white border-normal dark:bg-black p-6 border-b sm:p-8 md:p-10 rounded-lg shadow-lg"
     >
       <h2 className="text-2xl sm:text-3xl text-normal md:text-4xl font-bold mb-6">
         {t("contact.title")}
@@ -63,7 +61,7 @@ export default function Contact() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
         <div className="space-y-4">
           <p className="flex items-center text-normal text-sm sm:text-base">
-            <Mail className="mr-2 rtl:ml-2 rtl:mr-0 h-5 w-5" />{" "}
+            <Mail className="mr-2 rtl:ml-2 rtl:mr-0 h-5 w-5" />
             {t("contact.email")}: mohammadmohammadi2025@gmail.com
           </p>
           <p className="text-sm text-normal sm:text-base md:text-lg flex items-center">
@@ -94,7 +92,7 @@ export default function Contact() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
           onSubmit={handleSubmit}
-          className="space-y-4 border p-4 rounded-md"
+          className="space-y-4 border border-normal p-4 rounded-md"
         >
           <div>
             <label
@@ -108,7 +106,7 @@ export default function Contact() {
               id="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="mt-1 w-full p-2 border rounded-lg focus:outline-none focus:border-green-500 bg-transparent"
+              className="mt-1 w-full p-2 border border-normal rounded-lg focus:outline-none  bg-transparent"
               required
             />
           </div>
@@ -124,7 +122,7 @@ export default function Contact() {
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="mt-1 w-full p-2 border rounded-lg focus:outline-none focus:border-green-500 bg-transparent"
+              className="mt-1 w-full p-2 border border-normal rounded-lg focus:outline-none  bg-transparent"
               required
             />
           </div>
@@ -139,7 +137,7 @@ export default function Contact() {
               id="message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              className="mt-1 w-full p-2 border rounded-lg focus:outline-none focus:border-green-500 bg-transparent"
+              className="mt-1 w-full p-2 border border-normal rounded-lg focus:outline-none  bg-transparent"
               rows={4}
               required
             />

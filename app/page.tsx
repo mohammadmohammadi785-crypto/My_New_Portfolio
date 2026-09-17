@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 
 export default function Page() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-950 dark:to-gray-900 transition-colors">
+    <div className="min-h-screen bg-gradient-to-b dark:bg-black transition-colors">
       <Header />
       <main className="container mx-auto px-4 py-12 space-y-16">
         <Home />
