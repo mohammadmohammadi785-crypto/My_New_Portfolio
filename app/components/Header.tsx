@@ -1,5 +1,5 @@
 "use client";
-
+import "../globals.css";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sun, Moon, Menu, X } from "lucide-react";
@@ -21,7 +21,7 @@ export default function Header() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 120, damping: 20 }}
-      className="border-b-normal border-b py-3 sm:py-4 sticky top-0 z-50 shadow-lg"
+      className="border-b-normal bg-black text-white border-b py-3 sm:py-4 sticky top-0 z-50 shadow-lg"
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <h1 className="text-xl brush gradient-bg text-normal sm:text-2xl md:text-3xl font-extrabold tracking-tight">

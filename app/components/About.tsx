@@ -22,7 +22,7 @@ export default function About() {
       initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="bg-white border-b rounded-b-none p-6 sm:p-8 md:p-10 rounded-lg shadow-lg"
+      className="bg-black text-white border-b rounded-b-none p-6 sm:p-8 md:p-10 rounded-lg shadow-lg"
     >
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
         About Me
