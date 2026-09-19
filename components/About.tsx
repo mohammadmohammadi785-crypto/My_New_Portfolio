@@ -47,21 +47,22 @@ import "@/i18n/config";
 //     icon: <img src={redux1} className="h-5 w-5 text-black" />,
 //   },
 // ];
-const skills = [
-  ["React", "/react1.svg"],
-  ["Type Script", "/typescript.svg"],
-  ["Java Script", "/javascript.svg"],
-  ["Html", "/html5.svg"],
-  ["CSS", "/css.svg"],
-  ["Tailwind CSS", "/tailwindcss.svg"],
-  ["NextJs", "/nextdotjs.svg"],
-  ["GitHub", "/icons/github.svg"],
-  ["Laravel", "/laravel.svg"],
-  ["Redux", "/redux1.svg"],
-];
 
 export default function About() {
   const { t } = useTranslation();
+  const skills = [
+    [`${t("skills.React")}`, "/react1.svg"],
+    [`${t("skills.TypeScript")}`, "/typescript.svg"],
+    [`${t("skills.JavaScript")}`, "/javascript.svg"],
+    [`${t("skills.Html")}`, "/html5.svg"],
+    [`${t("skills.CSS")}`, "/css.svg"],
+    [`${t("skills.Tailwindcss")}`, "/tailwindcss.svg"],
+    [`${t("skills.NextJS")}`, "/nextdotjs.svg"],
+    [`${t("skills.GitHub")}`, "/icons/github.svg"],
+    [`${t("skills.Laravel")}`, "/laravel.svg"],
+    [`${t("skills.Redux")}`, "/redux1.svg"],
+  ];
+
   return (
     <motion.section
       id="about"
