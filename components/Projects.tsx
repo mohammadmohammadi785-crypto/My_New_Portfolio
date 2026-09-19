@@ -27,7 +27,7 @@ export default function Projects() {
       initial={{ x: 100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="bg-white dark:bg-black p-6 border-b sm:p-8 rounded-lg shadow-lg"
+      className="bg-white dark:bg-black p-6 border-b border-normal rounded-bl-none rounded-br-none sm:p-8 rounded-lg shadow-lg"
     >
       <h2 className="text-3xl sm:text-4xl font-bold mb-6">
         {t("projects.title")}

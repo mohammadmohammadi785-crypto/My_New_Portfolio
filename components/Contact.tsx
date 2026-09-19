@@ -53,7 +53,7 @@ export default function Contact() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       id="contact"
-      className="bg-white border-normal dark:bg-black p-6 border-b sm:p-8 md:p-10 rounded-lg shadow-lg"
+      className="bg-white border-normal rounded-bl-none rounded-br-none dark:bg-black p-6 border-b sm:p-8 md:p-10 shadow-lg"
     >
       <h2 className="text-2xl sm:text-3xl text-normal md:text-4xl font-bold mb-6">
         {t("contact.title")}
@@ -106,7 +106,7 @@ export default function Contact() {
               id="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="mt-1 w-full p-2 border border-normal rounded-lg focus:outline-none  bg-transparent"
+              className="mt-1 w-full p-2 border border-normal focus:outline-none  bg-transparent"
               required
             />
           </div>

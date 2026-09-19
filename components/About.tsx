@@ -68,7 +68,7 @@ export default function About() {
       initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="bg-white text-normal dark:bg-black border-b p-6 sm:p-8 md:p-10 rounded-lg shadow-lg"
+      className="bg-white text-normal border-normal rounded-bl-none rounded-br-none dark:bg-black border-b p-6 sm:p-8 md:p-10 rounded-lg shadow-lg"
     >
       <h2 className="text-2xl text-normal sm:text-3xl md:text-4xl font-bold mb-6">
         {t("about.title")}
