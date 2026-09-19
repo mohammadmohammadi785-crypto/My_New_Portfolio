@@ -123,7 +123,7 @@ export const resources = {
         view: "مشاهده در GitHub",
         restaurantTitle: "رستوران آنلاین",
         restaurantDescription:
-          "یک رستوران آنلاین کامل که با React، TypeScript و Tailwind CSS ساخته شده است.",
+          "یک رستوران آنلاین کامل که با Next.js, TypeScript و Tailwind CSS ساخته شده است.",
         portfolioTitle: "وب‌سایت پورتفولیو",
         portfolioDescription:
           "یک پورتفولیوی شخصی برای نمایش کارها که با React و Tailwind CSS ساخته شده است.",
