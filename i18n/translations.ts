@@ -7,6 +7,11 @@ export const resources = {
         projects: "Projects",
         contact: "Contact",
       },
+      SocialLinks: {
+        twitter: "Twitter",
+        GitHub: "GitHub",
+        Linkedin: "Linkedin",
+      },
       title: "Mohammad Mohammadi",
       home: {
         title: "Welcome to My Portfolio",
@@ -68,6 +73,11 @@ export const resources = {
         contact: "تماس با من",
       },
       title: "محمد محمدی",
+      SocialLinks: {
+        twitter: "تویتر",
+        GitHub: "گیت هاب",
+        Linkedin: "لینک دین",
+      },
       home: {
         title: "به پورتفولیوی من خوش آمدید",
         intro:

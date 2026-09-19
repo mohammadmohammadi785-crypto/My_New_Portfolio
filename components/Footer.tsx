@@ -3,14 +3,13 @@
 import { motion } from "framer-motion";
 import { Mail, Phone } from "lucide-react";
 import { Github, Linkedin, Twitter } from "lucide-react";
-const socialLinks1 = [
-  ["GitHub", <Github className="h-5 w-5 sm:h-6 sm:w-6" />],
-  ["LinkedIn", <Linkedin className="h-5 w-5 sm:h-6 sm:w-6" />],
-  ["twitter", <Twitter className="h-5 w-5 sm:h-6 sm:w-6" />],
-];
+// const socialLinks1 = [
+//   ["GitHub", <Github className="h-5 w-5 sm:h-6 sm:w-6" />],
+//   ["LinkedIn", <Linkedin className="h-5 w-5 sm:h-6 sm:w-6" />],
+//   ["twitter", <Twitter className="h-5 w-5 sm:h-6 sm:w-6" />],
+// ];
 import { useTranslation } from "react-i18next";
 import "@/i18n/config";
-import { link } from "fs/promises";
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -22,17 +21,17 @@ export default function Footer() {
   ];
   const socialLinks = [
     {
-      name: "GitHub",
+      name: `${t("SocialLinks.GitHub")}`,
       href: "https://github.com/mohammadmohammadi785-crypto",
       icon: <Github className="h-5 w-5 sm:h-6 sm:w-6" />,
     },
     {
-      name: "LinkedIn",
+      name: `${t("SocialLinks.Linkedin")}`,
       href: "https://www.linkedin.com/in/mohammad-mohammadi-372a45394/",
       icon: <Linkedin className="h-5 w-5 sm:h-6 sm:w-6" />,
     },
     {
-      name: "Twitter",
+      name: `${t("SocialLinks.twitter")}`,
       href: "https://x.com/M0HAMMADI1212",
       icon: <Twitter className="h-5 w-5 sm:h-6 sm:w-6" />,
     },

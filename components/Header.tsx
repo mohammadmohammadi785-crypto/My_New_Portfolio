@@ -18,10 +18,6 @@ export default function Header() {
   useEffect(() => {
     setMounted(true);
     const saved = localStorage.getItem("language") as "en" | "fa" | null;
-    const lang = saved ?? "en";
-    i18n.changeLanguage(lang);
-    document.documentElement.lang = lang;
-    document.documentElement.dir = lang === "fa" ? "rtl" : "ltr";
   }, [i18n]);
 
   const changeLanguage = async (lang: "en" | "fa") => {
@@ -69,7 +65,7 @@ export default function Header() {
 
           <div className="flex items-center gap-2">
             <button
-              onClick={() => changeLanguage(language === "en" ? "fa" : "en")}
+              onClick={() => changeLanguage(language == "en" ? "fa" : "en")}
               className="p-2 text-normal rounded-full"
               aria-label="Change language"
               title={
@@ -78,7 +74,9 @@ export default function Header() {
                   : t("language.english")
               }
             >
-              <Languages className="h-5 w-5" />
+              {language === "en"
+                ? t("language.persian")
+                : t("language.english")}
             </button>
             <motion.button
               whileHover={{ scale: 1.1 }}
@@ -98,11 +96,12 @@ export default function Header() {
 
         <div className="flex items-center gap-2 sm:hidden">
           <button
-            onClick={() => changeLanguage(language === "en" ? "fa" : "en")}
+            onClick={() => changeLanguage(language == "en" ? "fa" : "en")}
             className="p-2 text-normal"
             aria-label="Change language"
           >
-            <Languages className="h-5 w-5" />
+            fa
+            {/* <Languages className="h-5 w-5" /> */}
           </button>
           <button
             onClick={toggleTheme}

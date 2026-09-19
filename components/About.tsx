@@ -2,15 +2,6 @@
 
 import { motion } from "framer-motion";
 import Github from "@/public/icons/github.svg";
-import nextdotjs from "@/public/nextdotjs.svg";
-import tailwindcss from "@/public/tailwindcss.svg";
-import javascript from "@/public/javascript.svg";
-import html5 from "@/public/html5.svg";
-import react1 from "@/public/react1.svg";
-import css from "@/public/css.svg";
-import laravel from "@/public/laravel.svg";
-import typescript from "@/public/typescript.svg";
-import redux1 from "@/public/react1.svg";
 import { useTranslation } from "react-i18next";
 import "@/i18n/config";
 
