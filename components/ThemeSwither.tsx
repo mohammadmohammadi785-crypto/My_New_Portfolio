@@ -24,11 +24,11 @@ export default function ThemeSwither() {
     <DropdownMenu>
       <DropdownMenuTrigger className="text-normal">
         {theme === "light" ? (
-          <Sun />
+          <Sun size={20} />
         ) : theme === "dark" ? (
-          <Moon />
+          <Moon size={20} />
         ) : (
-          <SunMoon />
+          <SunMoon size={20} />
         )}
       </DropdownMenuTrigger>
       <DropdownMenuContent>
