@@ -2,7 +2,9 @@
 
 import { motion } from "framer-motion";
 import { Mail, Phone } from "lucide-react";
-import { Github, Linkedin, Twitter } from "lucide-react";
+import Github from "@/public/icons/github.svg";
+import Linkedin from "@/public/icons/linkedin.svg";
+import Twitter from "@/public/icons/github.svg";
 // const socialLinks1 = [
 //   ["GitHub", <Github className="h-5 w-5 sm:h-6 sm:w-6" />],
 //   ["LinkedIn", <Linkedin className="h-5 w-5 sm:h-6 sm:w-6" />],
@@ -10,6 +12,7 @@ import { Github, Linkedin, Twitter } from "lucide-react";
 // ];
 import { useTranslation } from "react-i18next";
 import "@/i18n/config";
+import Image from "next/image";
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -23,17 +26,33 @@ export default function Footer() {
     {
       name: `${t("SocialLinks.GitHub")}`,
       href: "https://github.com/mohammadmohammadi785-crypto",
-      icon: <Github className="h-5 w-5 sm:h-6 sm:w-6" />,
+      icon: (
+        <Image
+          width={500}
+          height={500}
+          alt="Github"
+          src={Github}
+          className="h-5 w-5 sm:h-6 sm:w-6 text-white"
+        />
+      ),
     },
     {
       name: `${t("SocialLinks.Linkedin")}`,
       href: "https://www.linkedin.com/in/mohammad-mohammadi-372a45394/",
-      icon: <Linkedin className="h-5 w-5 sm:h-6 sm:w-6" />,
+      icon: (
+        <Image
+          alt="linkedin"
+          src={Linkedin}
+          className="h-5 w-5 sm:h-6 sm:w-6"
+        />
+      ),
     },
     {
       name: `${t("SocialLinks.twitter")}`,
       href: "https://x.com/M0HAMMADI1212",
-      icon: <Twitter className="h-5 w-5 sm:h-6 sm:w-6" />,
+      icon: (
+        <Image alt="twitter" src={Twitter} className="h-5 w-5 sm:h-6 sm:w-6" />
+      ),
     },
   ];
 

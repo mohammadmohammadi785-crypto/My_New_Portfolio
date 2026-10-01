@@ -64,11 +64,11 @@ export default function Home() {
         <div className="flex flex-col items-center sm:flex-row justify-center gap-4 sm:gap-8">
           <div className="flex items-center">
             <Code className="h-8 w-8 text-normal mr-2 rtl:ml-2 rtl:mr-0" />
-            <span>{t("home.frontend")}</span>
+            <span className="dark:text-normal">{t("home.frontend")}</span>
           </div>
           <div className="flex items-center">
             <Globe className="h-8 w-8 text-normal mr-2 rtl:ml-2 rtl:mr-0" />
-            <span>{t("home.fullstack")}</span>
+            <span className="dark:text-normal">{t("home.fullstack")}</span>
           </div>
         </div>
       </motion.div>

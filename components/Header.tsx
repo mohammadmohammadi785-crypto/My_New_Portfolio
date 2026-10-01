@@ -6,6 +6,8 @@ import { Sun, Moon, Menu, X, Languages } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useTranslation } from "react-i18next";
 import "@/i18n/config";
+import ThemeSwither from "./ThemeSwither";
+import LangSwither from "./LangSwither";
 
 export default function Header() {
   const { theme, resolvedTheme, setTheme } = useTheme();
@@ -62,35 +64,9 @@ export default function Header() {
               ))}
             </ul>
           </nav>
-
           <div className="flex items-center gap-2">
-            <button
-              onClick={() => changeLanguage(language == "en" ? "fa" : "en")}
-              className="p-2 text-normal rounded-full"
-              aria-label="Change language"
-              title={
-                language === "en"
-                  ? t("language.persian")
-                  : t("language.english")
-              }
-            >
-              {language === "en"
-                ? t("language.persian")
-                : t("language.english")}
-            </button>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={toggleTheme}
-              className="p-2 text-normal rounded-full"
-              aria-label="Toggle theme"
-            >
-              {mounted && theme === "dark" ? (
-                <Sun className="h-5 w-5" />
-              ) : (
-                <Moon className="h-5 w-5" />
-              )}
-            </motion.button>
+            <LangSwither />
+            <ThemeSwither />
           </div>
         </div>
 
@@ -101,7 +77,6 @@ export default function Header() {
             aria-label="Change language"
           >
             fa
-            {/* <Languages className="h-5 w-5" /> */}
           </button>
           <button
             onClick={toggleTheme}
