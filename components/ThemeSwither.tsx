@@ -10,9 +10,11 @@ import {
 } from "./ui/dropdown-menu";
 import { Moon, Sun, SunMoon } from "lucide-react";
 import { useTheme } from "next-themes";
+import { useTranslation } from "react-i18next";
 
 export default function ThemeSwither() {
   const { theme, setTheme } = useTheme();
+  const { t } = useTranslation();
   const [mount, setMount] = useState(false);
   useEffect(() => {
     setMount(true);
@@ -35,20 +37,20 @@ export default function ThemeSwither() {
         </DropdownMenuGroup>
         <DropdownMenuItem onClick={() => setTheme("light")}>
           <div className="w-full flex justify-between">
-            <span>Light</span>
-            <Sun />
+            <span>{t("theme.light")}</span>
+            <Sun size={20} />
           </div>
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("dark")}>
           <div className="w-full flex justify-between">
-            <span>Dark</span>
-            <Moon />
+            <span>{t("theme.dark")}</span>
+            <Moon size={20} />
           </div>
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("system")}>
           <div className="w-full flex justify-between">
-            <span>System</span>
-            <SunMoon />
+            <span>{t("theme.system")}</span>
+            <SunMoon size={20} />
           </div>
         </DropdownMenuItem>
       </DropdownMenuContent>

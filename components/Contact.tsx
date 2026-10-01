@@ -1,7 +1,5 @@
 "use client";
 
-import github from "@/public/icons/github.svg";
-import Linkedin from "@/public/icons/linkedin.svg";
 import { motion } from "framer-motion";
 import { Mail, Send } from "lucide-react";
 import emailjs from "@emailjs/browser";
@@ -67,7 +65,7 @@ export default function Contact() {
             {t("contact.email")}: mohammadmohammadi2025@gmail.com
           </p>
           <p className="text-sm text-normal sm:text-base md:text-lg flex items-center">
-            <img src={Linkedin} className="mr-2 rtl:ml-2 rtl:mr-0 h-5 w-5" />
+            <i className="mr-2 fab fa-linkedin rtl:ml-2 rtl:mr-0 h-5 w-5"></i>
             <a
               href="https://www.linkedin.com/in/mohammad-mohammadi-372a45394/"
               target="_blank"
@@ -78,7 +76,7 @@ export default function Contact() {
             </a>
           </p>
           <p className="text-sm sm:text-base text-normal md:text-lg flex items-center">
-            <img src={github} className="mr-2 rtl:ml-2 rtl:mr-0 h-5 w-5" />
+            <i className="mr-2 fab fa-github rtl:ml-2 rtl:mr-0 h-5 w-5"></i>
             <a
               href="https://github.com/mohammadmohammadi785-crypto"
               target="_blank"

@@ -73,7 +73,7 @@ export const resources = {
         built: "Built with Next.js, TypeScript, and Tailwind CSS",
       },
       language: { english: "English", persian: "فارسی" },
-      theme: { light: "Light mode", dark: "Dark mode" },
+      theme: { system: "System", light: "Light", dark: "Dark" },
     },
   },
   fa: {
@@ -150,7 +150,7 @@ export const resources = {
         built: "ساخته شده با Next.js، TypeScript و Tailwind CSS",
       },
       language: { english: "English", persian: "فارسی" },
-      theme: { light: "حالت روشن", dark: "حالت تاریک" },
+      theme: { system: "حالت سیستم", light: "حالت روشن", dark: "حالت تاریک" },
     },
   },
 } as const;
